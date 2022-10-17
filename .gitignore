@@ -1,0 +1,6 @@
+# Project exclude paths
+/out/
+/.idea/
+/09 Java/LABS/out/
+/09 Java/LABS/.idea/
+/ITMO.124-16.Leontev.09-JAVA.iml
