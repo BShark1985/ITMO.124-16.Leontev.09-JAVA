@@ -3,26 +3,25 @@ package LAB04.Part2;
 import java.util.Arrays;
 
 public class Task4 {
-    public static int uniqueNum(int[] array){
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            if(array[i] > max) max = array[i];
+    public static void uniqueNum(int[] myArray) {
+        for (int i = 0; i < myArray.length; i++) {
+            Boolean result = true;
+            for (int j = 0; j < myArray.length; j++) {
+                if (myArray[i] == myArray[j] && i != j) {
+                    result = false;
+                }
+            }
+            if (result) {
+                System.out.println(myArray[i]);
+                break;
+            }
         }
-        return max;
     }
 
     public static void main(String[] args) {
         int[] myArray = {3, 5, 4, 1, 7, 3, 5};
+        int i = myArray.length;
         System.out.println(Arrays.toString(myArray));
-        int[] counts = new int[uniqueNum(myArray) + 1];
-
-        for (int i = 0; i < myArray.length; i++) {
-            counts[myArray[i]]++;
-        }
-
-        for (int i = 0; i < myArray.length; i++) {
-            if(counts[myArray[i]] == 1) System.out.print(myArray[i] + " ");
-        }
 
         uniqueNum(myArray);
     }
